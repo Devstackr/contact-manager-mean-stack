@@ -1,0 +1,26 @@
+<div class="layout-box">
+
+  <div class="top-bar">
+
+    <a routerLink="/" *ngIf="isLoggedIn()" style="margin-left: 15px">
+      <div class="icon">
+        <i class="material-icons">home</i>
+      </div>
+    </a>
+    
+    <div class="fullwidth">
+      <h1 class="has-text-centered">Contact Manager</h1>
+    </div>
+
+    <a routerLink="/user-details" *ngIf="isLoggedIn()" style="margin-right: 15px">
+      <div class="icon">
+        <i class="material-icons">person</i>
+      </div>
+    </a>
+  </div>
+  
+  <div class="page-content">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>

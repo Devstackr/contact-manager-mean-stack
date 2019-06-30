@@ -1,0 +1,70 @@
+<form #contactForm="ngForm" (ngSubmit)="onSubmit()" *ngIf="contact">
+
+  <div class="field">
+    <label class="label">Name</label>
+    <div class="control">
+      <input
+        class="input"
+        required
+        name="name"
+        [ngModel]="contact.name"
+        type="text"
+        placeholder="e.g Alex Smith">
+    </div>
+  </div>
+
+  <br>
+  
+  <div class="field">
+    <label class="label">Phone Number</label>
+    <div class="control">
+      <input
+        class="input"
+        required
+        name="phoneNumber"
+        [ngModel]="contact.phoneNumber"
+        type="text"
+        placeholder="e.g. 07911 12345">
+    </div>
+  </div>
+
+  <br>
+
+  <div class="field">
+    <label class="label">Email</label>
+    <div class="control">
+      <input
+        class="input"
+        required
+        email
+        name="email"
+        [ngModel]="contact.email"
+        type="email"
+        placeholder="e.g. alexsmith@gmail.com">
+    </div>
+  </div>
+
+  <br>
+
+  <div class="field">
+    <label class="label">Notes</label>
+    <div class="control">
+      <textarea
+        class="textarea"
+        type="email"
+        name="notes"
+        [ngModel]="contact.notes"
+        placeholder="e.g. we met at a convention"></textarea>
+    </div>
+  </div>
+  
+  <br>
+
+  <div class="button delete-button" (click)="onDeleteClicked()">Delete</div>
+
+  <div class="buttons is-pulled-right">
+    <button type="button" class="button is-light" (click)="onCancelClicked()">Cancel</button>
+    <button class="button is-success has-text-white" type="submit" [disabled]="!contactForm.valid">Save</button>
+  </div>
+  
+</form>

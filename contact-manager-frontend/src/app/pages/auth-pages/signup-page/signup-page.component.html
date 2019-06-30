@@ -1,0 +1,21 @@
+<div class="main-section">
+
+  <div class="main-container">
+
+    <div class="form-container">
+      <h1 class="title">Sign up</h1>
+
+      <app-user-details (formSubmit)="signup($event)"></app-user-details>
+
+    </div>
+
+    <div class="alternate-bar">
+      <h2>Already have an account?</h2>
+      <button class="button" routerLink="/login">
+        Login
+      </button>
+    </div>
+
+  </div>
+
+</div>

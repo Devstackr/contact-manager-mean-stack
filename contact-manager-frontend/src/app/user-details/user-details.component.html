@@ -1,0 +1,57 @@
+<form #signupForm="ngForm" (ngSubmit)="onFormSubmit(signupForm)">
+
+  <div class="field">
+    <label class="label">Name</label>
+    <div class="control">
+      <input
+        type="text"
+        class="input"
+        name="name"
+        required
+        [ngModel]="user.name"
+        placeholder="e.g. Alex Smith">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Email</label>
+    <div class="control">
+      <input
+        type="email"
+        class="input"
+        name="email"
+        [ngModel]="user.email"
+        required
+        email
+        placeholder="e.g. alexsmith@gmail.com">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label" *ngIf="!userExists">Password</label>
+    <label class="label" *ngIf="userExists">Change Password</label>
+    <div class="control">
+      <input
+        type="password"
+        class="input"
+        name="password"
+        [ngModel]="user.password"
+        minlength="8"
+        [required]="!userExists"
+        [placeholder]="userExists ? 'Type new password here...' : 'e.g. password123'">
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="control">
+      <button type="submit" style="margin-top: 20px;" class="button is-primary has-text-white is-fullwidth"
+        placeholder="e.g. password123" [disabled]="!signupForm.valid">
+
+        <p *ngIf="userExists">Save</p>
+        <p *ngIf="!userExists">Sign up</p>
+        
+      </button>
+    </div>
+  </div>
+
+</form>

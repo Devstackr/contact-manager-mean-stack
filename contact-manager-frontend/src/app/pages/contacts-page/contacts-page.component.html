@@ -1,0 +1,46 @@
+<div class="main-section">
+
+  <div class="main-container">
+
+    <div class="sidebar">
+      <div class="contacts-list custom-scrollbar" [@listAnim] data-simplebar data-simplebar-auto-hide="false">
+        
+        <div
+          [@itemAnim]
+          class="contact-item has-loading-indicator"
+          *ngFor="let contact of contacts"
+          [ngClass]="{ 'selected': contact===selectedContact, 'is-loading is-small is-primary': contact===contactBeingLoaded }"
+          (click)="setSelectedContact(contact)">
+            {{ contact.name || 'New Contact' }}
+          </div>
+      </div>
+
+      <div class="bottom-container">
+        <button class="button is-primary add-button" [disabled]="newContact" (click)="addContact()">+</button>
+      </div>
+    </div>
+
+    <div
+      class="form-container has-loading-indicator"
+      [ngClass]="{ 'is-loading': contactBeingLoaded===selectedContact && selectedContact }">
+
+        <app-contact-form
+          *ngIf="selectedContact"
+          [contact]="selectedContact"
+          (formSubmit)="onFormSubmit($event)"
+          (formCancel)="onFormCancel()"
+          (contactDelete)="removeContact()"
+          style="width: 100%; margin:auto;">
+        </app-contact-form>
+
+        <div class="empty-state" *ngIf="!selectedContact">
+          <h3>Please select a contact</h3>
+          <img src="../../../assets/undraw_not_found_60pq.svg" alt="Not found illustration">
+        </div>
+        
+    </div>
+    
+  </div>
+  
+  
+</div>

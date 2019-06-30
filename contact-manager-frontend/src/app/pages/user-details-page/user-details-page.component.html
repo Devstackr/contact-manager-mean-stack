@@ -1,0 +1,14 @@
+<div class="main-container">
+
+  <div class="form-container">
+    <div class="user-details-title-container">
+      <h1 class="title">
+        User Details
+      </h1>
+      <button class="button logout-button is-danger" (click)="logout()">Log out</button>
+    </div>
+    <app-user-details [user]="user" (formSubmit)="saveUserDetails($event)"></app-user-details>
+  </div>
+
+</div>
+

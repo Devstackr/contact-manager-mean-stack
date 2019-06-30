@@ -1,0 +1,63 @@
+@import '../../../main-styles.scss';
+
+.main-section {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+
+    // Center children
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 5px;
+    overflow: hidden;
+
+    box-shadow: 0px 8px 25px 7px rgba(black, 0.08);
+    width: 420px;
+
+    .alternate-bar {
+        display: flex;
+        flex-direction: row;
+
+        padding: 20px 50px;
+
+        align-items: center;
+
+        background: $dark;
+
+        h2 {
+            display: flex;
+            font-size: 18px;
+            color: rgb(250, 253, 255);
+            flex-grow: 1;
+        }
+
+        button {
+            color: white;
+            border-color: #f5f5f5;
+            background-color: transparent;
+            transition: background-color 0.1s ease-out, border-color 0.1s ease-out;
+
+            &:hover {
+                border-color: $primary;
+                background-color: darken($primary, 2%);
+            }
+        }
+    }
+
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        background: white;
+
+        padding: 50px;
+        overflow-y: auto;
+    }
+}

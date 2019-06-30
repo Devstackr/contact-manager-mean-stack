@@ -1,0 +1,63 @@
+<div class="main-section">
+
+  <div class="main-container">
+
+    <div class="form-container">
+      <h1 class="title">Log in</h1>
+
+
+      <form #loginForm="ngForm" (ngSubmit)="onFormSubmit(loginForm)">
+
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control">
+            <input
+              type="email"
+              class="input"
+              name="email"
+              required
+              email
+              [ngModel]="user.email"
+              placeholder="e.g. alexsmith@gmail.com">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Password</label>
+          <div class="control">
+            <input
+              type="password"
+              class="input"
+              name="password"
+              [ngModel]="user.password"
+              required
+              minlength="8"
+              placeholder="e.g. password123">
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <button
+              type="submit"
+              style="margin-top: 20px;"
+              class="button is-primary has-text-white is-fullwidth"
+              [disabled]="!loginForm.valid"
+              placeholder="e.g. password123">Log in</button>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+
+    <div class="alternate-bar">
+      <h2>Don't have an account?</h2>
+      <button class="button" routerLink="/signup">
+        Sign up
+      </button>
+    </div>
+
+  </div>
+
+</div>

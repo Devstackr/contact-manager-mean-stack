@@ -1,0 +1,59 @@
+@import '../../../main-styles.scss';
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+
+    // Center flex children
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    width: 420px;
+
+    // Center flex children
+    justify-content: center;
+    align-items: center;
+
+    display: block;
+    width: 420px;
+
+    padding: 50px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0px 2px 20px 1px rgba(black, 0.1);
+    
+}
+
+.user-details-title-container {
+    display: flex;
+    
+    margin-bottom: 35px;
+
+    justify-content: center;
+    align-items: center;
+
+    h1.title {
+        flex-grow: 1;
+
+        font-size: 24px;
+        margin: 0;
+    }
+
+    .logout-button {
+        background: $light-red;
+        color: $dark-red;
+        border-color: transparent;
+
+        &:hover {
+            background: darken($light-red, 2%);
+        }
+
+    }
+}
