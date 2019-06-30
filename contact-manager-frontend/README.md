@@ -1,6 +1,6 @@
 # Contact Manager Frontend
 
-[![Application Design Illustration](/src/assets/angular_thumbnail.png)](https://www.youtube.com/channel/UCbwsS1m4Hib6R-9F1alus_A)
+[![Application Design Illustration](./src/assets/angular_thumbnail.png)](https://www.youtube.com/channel/UCbwsS1m4Hib6R-9F1alus_A)
 
 <!-- TODO: Change links when you upload video -->
 
